@@ -31,7 +31,7 @@ is not recommended as it may interfere with expected server behavior.
         <div class="content">
             <form id="kc-qr-login-form" method="POST"  action="$resumePath" autocomplete="off">
                 <div>
-                    <div>${msg("pushNotificationFormLoginSentMessage")}</div>
+                    <div>$pluginTemplateMessages.getMessage("pushNotificationFormLoginSentMessage")</div>
                 </div>
                 <input type="hidden" name="action" id="action-input" value="authenticate"/>
             </form>

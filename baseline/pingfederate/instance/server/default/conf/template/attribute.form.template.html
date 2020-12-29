@@ -46,36 +46,36 @@ is not recommended as it may interfere with expected server behavior.
                 form.submit();
             }, 5000);
         </script>
-        
+
         #elseif($status == "qr_code")
-            <div class="content">
-                <form id="kc-qr-login-form" method="POST"  action="$resumePath" autocomplete="off">
+        <div class="content">
+            <form id="kc-qr-login-form" method="POST"  action="$resumePath" autocomplete="off">
 
-                    <div>
-                        <div>$pluginTemplateMessages.getMessage(("verifyFormMessage")</div>
-                    </div>
-                    <input type="hidden" name="action" id="action-input" value="register"/>
-                </form>
-            </div>
-            <script type="text/javascript">
-                // Form and action input to specify the operation on page submit.
-                var form = document.getElementById('kc-qr-login-form');
-                var actionInput = document.getElementById('action-input');
-                var qrCodeImg = document.createElement('img');
-                var qrSrc = '$qrCode';
-                var qrNumber = '$qrCodeNumber'
-                var qrNumberP = document.createElement('p');
-                qrCodeImg.src = 'data:image/png;base64,' + qrSrc;
-                qrNumberP.innerHTML  = '$pluginTemplateMessages.getMessage("verifyNumberMessage")' + qrNumber;
-                form.appendChild(qrCodeImg);
-                form.appendChild(qrNumberP)
+                <div>
+                    <div>$pluginTemplateMessages.getMessage("verifyFormMessage")</div>
+                </div>
+                <input type="hidden" name="action" id="action-input" value="register"/>
+            </form>
+        </div>
+        <script type="text/javascript">
+            // Form and action input to specify the operation on page submit.
+            var form = document.getElementById('kc-qr-login-form');
+            var actionInput = document.getElementById('action-input');
+            var qrCodeImg = document.createElement('img');
+            var qrSrc = '$qrCode';
+            var qrNumber = '$qrCodeNumber'
+            var qrNumberP = document.createElement('p');
+            qrCodeImg.src = 'data:image/png;base64,' + qrSrc;
+            qrNumberP.innerHTML  = '$pluginTemplateMessages.getMessage("verifyNumberMessage")' + qrNumber;
+            form.appendChild(qrCodeImg);
+            form.appendChild(qrNumberP)
 
-                // Poll every 5 seconds to see if registration has been completed.
-                setTimeout(function() {
-                    form.submit();
-                }, 5000);
+            // Poll every 5 seconds to see if registration has been completed.
+            setTimeout(function() {
+                form.submit();
+            }, 5000);
 
-            </script>
+        </script>
         #end
 
 
